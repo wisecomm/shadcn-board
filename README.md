@@ -38,6 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # 참조 사이트
 https://ui.shadcn.com/docs/components/toast
+
 https://lucide.dev/
+
 https://nextjs.org/docs/app/getting-started/installation
+
 https://supabase.com/dashboard/project/qvaxveetqptjuvejgjme/editor/29211?schema=public
