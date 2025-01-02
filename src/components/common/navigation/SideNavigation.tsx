@@ -1,18 +1,21 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button/button'
 import { Dot, Search } from 'lucide-react'
+import { useAtom } from 'jotai'
+import { sidebarStateAtom } from '@/store/index'
+
 // CSS
 import styles from './SideNavigation.module.scss'
-import { Input } from '@/components/ui/input'
+import { Input } from '@/components/ui/input/input'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/utils/supabase'
 import { useEffect, useState } from 'react'
-import { get } from 'http'
 
 function SideNavigation() {
   const router = useRouter()
 
+  const [sidebarState, setSidebarState] = useAtom(sidebarStateAtom)
   const [todos, setTodos] = useState<any>([])
 
   const onCreate = async () => {
@@ -55,7 +58,7 @@ const getTodos = async () => {
 
 useEffect(() => {
   getTodos()
-}, [])
+}, [sidebarState])
 
   return (
     <div className={styles.container}>

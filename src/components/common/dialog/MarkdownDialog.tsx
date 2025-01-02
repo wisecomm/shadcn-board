@@ -3,8 +3,8 @@
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
 
-import {
-  Dialog,
+import styles from './MarkdownDialog.module.scss'
+import { Button, Checkbox,   Dialog,
   DialogClose,
   DialogContent,
   DialogDescription,
@@ -12,14 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-
-import styles from './MarkdownDialog.module.scss'
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
-import LabelCalendar from "../calendar/LabelCalendar"
-import { Separator } from "@/components/ui/separator"
+  LabelDatePicker, Separator } from "@/components/ui"
 import { supabase } from "@/utils/supabase"
 import { usePathname } from "next/navigation"
 import path from "path"
@@ -44,9 +37,10 @@ interface BoardContent {
 
 interface Props {
   data: BoardContent
+  updateBoards: () => void
 }
 
-function MarkdownDialog({ data }: Props) {
+function MarkdownDialog({ data, updateBoards}: Props) {
   const pathname = usePathname()
   const [open, setOpen] = useState<boolean>(false)
   const [title, setTitle] = useState<string | undefined>('')
@@ -75,7 +69,9 @@ function MarkdownDialog({ data }: Props) {
                 element.startDate = startDate
                 element.endDate = endDate
                 element.content = content
-              } 
+              } else {
+                return
+              }
             })
           }
 
@@ -92,6 +88,7 @@ function MarkdownDialog({ data }: Props) {
             console.log('등록후 다이얼로그 닫기')
 
             setOpen(false)
+            updateBoards()
           }
 
           console.log('todo:', todo)
@@ -128,8 +125,8 @@ function MarkdownDialog({ data }: Props) {
             </div>
           </DialogTitle>
           <div className={styles.dialog__calendarBox}>
-            <LabelCalendar label='Form' handleDate={setStartDate}></LabelCalendar>
-            <LabelCalendar label='To' handleDate={setEndDate}></LabelCalendar>
+            <LabelDatePicker label='Form'></LabelDatePicker>
+            <LabelDatePicker label='To'></LabelDatePicker>
           </div>
           <Separator></Separator>
           <div className={styles.dialog__markdown}>

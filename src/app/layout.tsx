@@ -3,7 +3,7 @@ import { Noto_Sans_KR, Noto_Sans_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import SideNavigation from "@/components/common/navigation/SideNavigation";
 // shadcn UI
-import { ToastAction } from "@/components/ui/toast"
+import { Toaster } from "@/components/ui/toast/toaster";
 
 const geistSans = Noto_Sans_KR({
   variable: "--font-Noto-Sans-KR",
@@ -26,14 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SideNavigation />
         {children}
-        <ToastAction altText={"aa"} />
-      </body>
+        <Toaster />
+        </body>
     </html>
   );
 }

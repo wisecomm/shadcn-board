@@ -35,6 +35,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+# 패키지  설치
+npm install jotai
 
 # 참조 사이트
 https://ui.shadcn.com/docs/components/toast

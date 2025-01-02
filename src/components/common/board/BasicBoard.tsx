@@ -1,18 +1,15 @@
-import { Checkbox } from '@/components/ui/checkbox'
 import styles from './BasicBoard.module.scss'
-import { Button } from '@/components/ui/button'
 import { ChevronUp } from 'lucide-react'
-import LabelCalendar from '../calendar/LabelCalendar'
+import { Button, Checkbox, Input, LabelDatePicker, Separator } from "@/components/ui"
 import MarkdownDialog from '../dialog/MarkdownDialog'
 import { useState } from 'react'
-import { Input } from '@/components/ui/input'
 import { supabase } from '@/utils/supabase'
 import { usePathname } from 'next/navigation'
-import { Card } from '@/components/ui/card'
+import { Card } from '@/components/ui/card/card'
 import MDEditor, { commands } from "@uiw/react-md-editor";
 
 import { useToast } from "@/hooks/use-toast"
-import { ToastAction } from "@/components/ui/toast"
+import { ToastAction } from "@/components/ui/toast/toast"
 
 interface Todo {
     id: number
@@ -43,27 +40,23 @@ function BasicBoard({ data, handleBords }: Props) {
     const getDatas = async () => {
         let { data: todos, error } = await supabase.from('todos').select('*')
 
-        console.log('XXXXXXXX:', 'xxxx')
-        toast({
-            title: "Scheduled: Catch up ",
-            description: "Friday, February 10, 2023 at 5:57 PM",
-            action: (
-              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-            ),
-          })        
-        toast({ title: 'error', description: 'error' })
         if (error) {
             console.log('error:', error)
-            toast({ title: 'error', description: 'error' })
+            return
         }
         console.log('todos:', todos)
         console.log('pathname:', pathname)
 
-        if (todos !== null) {
-            todos.forEach((todo: Todo) => {
-                handleBords(todo)
-            })
+        if (todos === null || todos.length === 0) {
+            console.log('todos empty')
+            return
         }
+
+        todos.forEach((todo: Todo) => {
+            if(todo.id === Number(pathname.split('/')[2])) {
+                handleBords(todo)
+            }
+        })
     }
 
     
@@ -132,7 +125,7 @@ function BasicBoard({ data, handleBords }: Props) {
                 </Card> )
             }
             <div className={styles.cotainer__footer}>
-                <MarkdownDialog data={data}></MarkdownDialog>
+                <MarkdownDialog data={data} updateBoards={getDatas}></MarkdownDialog>
             </div>
         </div>
     </div>
