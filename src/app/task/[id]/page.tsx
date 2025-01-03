@@ -2,13 +2,10 @@
 
 import { Button, LabelDatePicker, Progress } from "@/components/ui";
 import styles from "./page.module.scss";
-import { useParams, usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { supabase } from "@/utils/supabase/client";
+import { useParams, useRouter } from "next/navigation";
 import { nanoid } from "nanoid";
 import { ChevronLeft } from "lucide-react";
-import { useRouter } from "next/negivation";
-import { Task, Board } from "@/types";
+import { Board } from "@/types";
 import { useCreateBoard } from "@/hooks/api";
 
 function TaskPage() {
@@ -82,8 +79,11 @@ function TaskPage() {
               <LabelDatePicker label={"Fron"} />
               <LabelDatePicker label={"To"} />
             </div>
-            <Button className="flex hover:bg-[E79057 ] hover:bg-[#E79057] hover:ring-[#79057] hover-ring-offset-1 active:bg-[#5753D">
-              Add New Button{" "}
+            <Button
+              className="flex hover:bg-[E79057 ] hover:bg-[#E79057] hover:ring-[#79057] hover-ring-offset-1 active:bg-[#5753D"
+              onClick={hadleAddBoard}
+            >
+              Add New Button
             </Button>
           </div>
         </div>
