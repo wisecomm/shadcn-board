@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Noto_Sans_Mono } from "next/font/google";
-import "@/styles/globals.css";
-import SideNavigation from "@/components/common/navigation/SideNavigation";
-// shadcn UI
 import { Toaster } from "@/components/ui/toast/toaster";
-
-const geistSans = Noto_Sans_KR({
-  variable: "--font-Noto-Sans-KR",
-  subsets: ["latin"],
-});
-
-const geistMono = Noto_Sans_Mono({
-  variable: "--font_Noto_Sans_Mono",
-  subsets: ["latin"],
-});
+import SideNavigation from "@/components/common/navigation/SideNavigation";
+/** 폰트 */
+import { FONT_NOTOSANSKR } from "@/assets/fonts";
+/** 스타일 */
+import "@/assets/styles/globals.css";
+import "@/assets/styles/main.scss";
 
 export const metadata: Metadata = {
   title: "Shade Board App",
@@ -27,13 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <SideNavigation />
-        {children}
+      <body className={FONT_NOTOSANSKR.className}>
+        <div className="page">
+          <SideNavigation />
+          <div className="page__main">{children}</div>
+        </div>
         <Toaster />
-        </body>
+      </body>
     </html>
   );
 }
