@@ -4,9 +4,9 @@ import { taskAtom } from "@/store/atoms";
 import { supabase } from "@/utils/supabase/client";
 import { useAtom } from "jotai";
 import { toast } from "../use-toast";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 
-function useGetTaskById(taskId: Number) {
+function useGetTaskById(taskId: number) {
     const [task, setTask] = useAtom(taskAtom);
 
     const getTaskById = async () => {

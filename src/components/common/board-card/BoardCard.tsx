@@ -9,11 +9,8 @@ import {
 import MarkdownEditor from "@uiw/react-md-editor";
 import { MarkdownDialog } from "@/components/common/dialog/MarkdownDialog";
 import { Card } from "@/components/ui/card/card";
-import MDEditor, { commands } from "@uiw/react-md-editor";
 
-import { useToast } from "@/hooks/use-toast";
-import { ToastAction } from "@/components/ui/toast/toast";
-import { Board, Task } from "@/types";
+import { Board } from "@/types";
 import { useDeleteBoard } from "@/hooks/api";
 import { useParams } from "next/navigation";
 

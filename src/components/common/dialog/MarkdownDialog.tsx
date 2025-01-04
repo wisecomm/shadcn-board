@@ -1,9 +1,8 @@
 "use client";
 
-import { Children, use, useEffect, useState } from "react";
-import { toast, useToast } from "@/hooks/use-toast";
+import { useEffect, useState } from "react";
+import { toast } from "@/hooks/use-toast";
 
-import styles from "./MarkdownDialog.module.scss";
 import {
   Button,
   Checkbox,

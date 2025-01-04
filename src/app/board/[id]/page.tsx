@@ -9,7 +9,7 @@ import { Board } from "@/types";
 import { useGetTaskById, useCreateBoard, useGetTasks } from "@/hooks/api";
 import { BoardCard } from "@/components/common/board-card/BoardCard";
 import Image from 'next/image';
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { DeleteTaskPopup } from "@/components/common";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/utils/supabase/client";
@@ -24,9 +24,8 @@ function TaskPage() {
     const [title, setTitle] = useState("");
     const [startDate, setStartDate] = useState<Date | undefined>(undefined);
     const [endDate, setEndDate] = useState<Date | undefined>(undefined);
-    const [count, setCount] = useState<number>(0);
     const [boards, setBoards] = useState<Board[]>([]);
-    const [progressCount, setProgressCount] = useState<number>(0);
+    const [progressCount] = useState<number>(0);
     
     const hadleAddBoard = () => {
         let newBoard: Board = {
