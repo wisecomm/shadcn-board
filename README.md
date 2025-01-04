@@ -17,6 +17,9 @@ https://supabase.com/dashboard/project/qvaxveetqptjuvejgjme/editor/29211?schema=
 # danyoh 정리 
 - .env.local 위치 ( node_modules 와 같은 위치(개벌시) )
 
+- vercel
+: 빌드 에러 : eslint.config.mjs 무시 추가 
+
 ## 스나이퍼팩토리 NEXT.js 4기 교육과정
 
 ### 프로젝트 설명
