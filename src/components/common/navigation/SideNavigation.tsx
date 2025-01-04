@@ -15,12 +15,10 @@ function SideNavigation() {
 
   /** 검색 */
   const handleSearch = async (
-    event: React.KeyboardEvent<HTMLInputElement>
   ) => { };
 
   // 검색어 상태 업데이트
   const handleSearchTermChange = (
-    event: React.ChangeEvent<HTMLInputElement>
   ) => { };
 
   // getTasks() 는 컴포 
