@@ -29,7 +29,7 @@ function useCreateTask() {
           title: "Task 생성 완료",
           description: "Task 생성 완료",
         });
-        router.push(`/task/${data[0].id}`);
+        router.push(`/board/${data[0].id}`);
       }
 
       if (error) {

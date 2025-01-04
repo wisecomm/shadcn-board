@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toast/toaster";
-import SideNavigation from "@/components/common/navigation/SideNavigation";
+import { SideNavigation } from "@/components/common";
+
 /** 폰트 */
-import { FONT_NOTOSANSKR } from "@/assets/fonts";
+import { FONT_NOTOSANSKR } from "../../public/assets/fonts";
+
 /** 스타일 */
-import "@/assets/styles/globals.css";
-import "@/assets/styles/main.scss";
+import "../../public/styles/globals.css";
+import "../../public/styles/main.scss";
 
 export const metadata: Metadata = {
   title: "Shade Board App",
@@ -17,6 +19,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="ko">
       <body className={FONT_NOTOSANSKR.className}>
