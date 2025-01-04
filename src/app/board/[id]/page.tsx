@@ -25,10 +25,9 @@ function TaskPage() {
     const [startDate, setStartDate] = useState<Date | undefined>(undefined);
     const [endDate, setEndDate] = useState<Date | undefined>(undefined);
     const [boards, setBoards] = useState<Board[]>([]);
-    const [progressCount] = useState<number>(0);
     
     const hadleAddBoard = () => {
-        let newBoard: Board = {
+        const newBoard: Board = {
             id: nanoid(),
             isCompleted: false,
             title: "",
@@ -52,7 +51,7 @@ function TaskPage() {
         }
 
         try {
-            const { data, status, error } = await supabase.from('tasks').update({
+            const { status, error } = await supabase.from('tasks').update({
                 title,
                 start_date: startDate,
                 end_date: endDate,
