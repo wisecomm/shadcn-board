@@ -12,7 +12,7 @@ import Image from 'next/image';
 import { useEffect, useState } from "react";
 import { DeleteTaskPopup } from "@/components/common";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/utils/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 function TaskPage() {
     const router = useRouter();

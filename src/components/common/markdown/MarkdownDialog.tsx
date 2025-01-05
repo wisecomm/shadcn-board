@@ -22,7 +22,7 @@ import MDEditor from "@uiw/react-md-editor";
 import { Board } from "@/types";
 import { useCreateBoard } from "@/hooks/api";
 import { useAtom } from "jotai";
-import { taskAtom } from "@/store/atoms";
+import { taskAtom } from "@/stores/atoms";
 
 interface Props {
   children: React.ReactNode;

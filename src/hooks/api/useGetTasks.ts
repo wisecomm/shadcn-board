@@ -1,7 +1,7 @@
 'use client';
 
-import { tasksAtom } from "@/store/atoms";
-import { supabase } from "@/utils/supabase/client";
+import { tasksAtom } from "@/stores/atoms";
+import { supabase } from "@/lib/supabase/client";
 import { useAtom } from "jotai";
 import { toast } from "../use-toast";
 

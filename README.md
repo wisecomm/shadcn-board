@@ -14,11 +14,38 @@ https://nextjs.org/docs/app/getting-started/installation
 
 https://supabase.com/dashboard/project/qvaxveetqptjuvejgjme/editor/29211?schema=public
 
+https://vercel.com/
+
 # danyoh 정리 
+: 빌드 에러 : eslint.config.mjs 무시 추가 
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-empty-interface": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "no-unused-vars": "off",
+    },
+  },
+];
+
+- import @/public 접근을 위해 샛팅 
+    "baseUrl": ".",    
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
+    }
+
 - .env.local 위치 ( node_modules 와 같은 위치(개벌시) )
 
 - vercel
 : 빌드 에러 : eslint.config.mjs 무시 추가 
+: 배포 에러 시 : https://medium.com/cloudvillains/supabase%EC%99%80-vercel%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B0%9C%EB%B0%9C-73ec22ac4f56
+ Supabase와 Vercel 연동하기 : 이부분만하니 빌드 배포됨 ㅎㅎㅎ
+
 
 ## 스나이퍼팩토리 NEXT.js 4기 교육과정
 

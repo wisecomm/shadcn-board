@@ -1,10 +1,10 @@
 "use client";
 
-import { supabase } from "@/utils/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { Board } from "@/types";
 import { useAtom } from "jotai";
-import { taskAtom } from "@/store/atoms";
+import { taskAtom } from "@/stores/atoms";
 
 function useCreateBoard() {
   const [, setTask] = useAtom(taskAtom);

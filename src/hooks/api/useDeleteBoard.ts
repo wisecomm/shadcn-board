@@ -1,8 +1,8 @@
-import { taskAtom } from "@/store/atoms";
+import { taskAtom } from "@/stores/atoms";
 import { useAtom } from "jotai";
 import { useGetTaskById } from "./useGetTaskById";
 import { toast } from "../use-toast";
-import { supabase } from "@/utils/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 function useDeleteBoard(taskId: number, boardId: string) {
     const [task]= useAtom(taskAtom);

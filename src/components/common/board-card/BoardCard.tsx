@@ -7,7 +7,7 @@ import {
   Separator,
 } from "@/components/ui";
 import MarkdownEditor from "@uiw/react-md-editor";
-import { MarkdownDialog } from "@/components/common/dialog/MarkdownDialog";
+import { MarkdownDialog } from "@/components/common/markdown/MarkdownDialog";
 import { Card } from "@/components/ui/card/card";
 
 import { Board } from "@/types";

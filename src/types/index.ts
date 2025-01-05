@@ -14,3 +14,12 @@ export interface Board {
   content: string;
   isCompleted: boolean;
 }
+
+export interface User {
+  id: string;
+  email: string;
+  phoneNumber: string;
+  nickname: string;
+  imgUrl: string;
+}
+

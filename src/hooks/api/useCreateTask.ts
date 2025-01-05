@@ -1,6 +1,6 @@
 "use client";
 
-import { supabase } from "@/utils/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { toast } from "../use-toast";
 

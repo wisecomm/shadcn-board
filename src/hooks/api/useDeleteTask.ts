@@ -1,6 +1,6 @@
 "use clinet";
 
-import { supabase } from "@/utils/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import { toast } from "../use-toast";
 import { useRouter } from "next/navigation";
 

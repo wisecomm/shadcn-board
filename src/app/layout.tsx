@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toast/toaster";
-import { SideNavigation } from "@/components/common";
+import { AsideSection } from "@/components/common";
 
 /** 폰트 */
 import { FONT_NOTOSANSKR } from "../../public/assets/fonts";
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={FONT_NOTOSANSKR.className}>
         <div className="page">
-          <SideNavigation />
+          <AsideSection />
           <div className="page__main">{children}</div>
         </div>
         <Toaster />
