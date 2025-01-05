@@ -20,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   
+  /*
   return (
     <html lang="ko">
       <body className={FONT_NOTOSANSKR.className}>
@@ -31,4 +32,14 @@ export default function RootLayout({
       </body>
     </html>
   );
+*/
+return (
+  <html lang="ko">
+    <body className={FONT_NOTOSANSKR.className}>
+        {children}
+      <Toaster />
+    </body>
+  </html>
+);
+
 }
