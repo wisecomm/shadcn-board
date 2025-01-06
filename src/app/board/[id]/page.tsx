@@ -43,7 +43,7 @@ function BoardDetailPage() {
         const newBoards = [...boards, newBoard];
 
         setBoards(newBoards);
-        createBoard(Number(id), "boards", newBoards);
+        createBoard(Number(id), newBoards);
     };
 
     const handleSave = async () => {
