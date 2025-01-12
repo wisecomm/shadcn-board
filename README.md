@@ -5,6 +5,15 @@ https://www.youtube.com/watch?v=fXLBVDa6J2s
 # 패키지  설치
 npm install jotai
 
+# shadcn 샘플 참조 ㅎㅎㅎ
+
+// 사이드바 샘플만들어 봄 ??? 1 ???
+https://ui.shadcn.com/blocks
+
+https://ui.shadcn.com/examples/tasks : 그리드 참조
+
+
+
 # 참조 사이트
 https://ui.shadcn.com/docs/components/toast
 
