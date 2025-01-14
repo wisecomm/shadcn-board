@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Card,
@@ -8,10 +10,19 @@ import {
   CardTitle,
   Input,
 } from "@/components/ui";
+import { toast } from "@/hooks/use-toast";
 import { Eye } from "lucide-react";
 import React from "react";
 
 function page() {
+  const handleLogin = async () => {
+    toast({
+      variant: "destructive",
+      title: "기입되지 않은 데이터(값)가 있습니다.",
+      description: "이메일과 비밀번호는 필수 값입니다.",
+    });
+  };
+
   return (
     <div className="page">
       <Card className="w-[400px]">
@@ -43,7 +54,10 @@ function page() {
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-[#E79057] hover:bg-[#E26F24] hover:ring-1 hover:ring-[#E26F24] hover:ring-offset-1 active:bg-[#D5753D] hover:shadow-lg">
+          <Button
+            className="w-full bg-[#E79057] hover:bg-[#E26F24] hover:ring-1 hover:ring-[#E26F24] hover:ring-offset-1 active:bg-[#D5753D] hover:shadow-lg"
+            onClick={handleLogin}
+          >
             로그인
           </Button>
         </CardFooter>
