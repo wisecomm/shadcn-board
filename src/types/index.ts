@@ -22,4 +22,3 @@ export interface User {
   nickname: string;
   imgUrl: string;
 }
-
